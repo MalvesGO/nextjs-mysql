@@ -1,5 +1,5 @@
-import { NextApiHandler } from 'next'
-import { query } from '../../lib/db'
+import { NextApiHandler } from "next";
+import { query } from "../../lib/db";
 
 const handler: NextApiHandler = async (_, res) => {
   try {
@@ -7,12 +7,12 @@ const handler: NextApiHandler = async (_, res) => {
       SELECT * FROM entries
       ORDER BY id DESC
       LIMIT 10
-  `)
+  `);
 
-    return res.json(results)
+    return res.json(results);
   } catch (e) {
-    res.status(500).json({ message: e.message })
+    res.status(500).json({ message: e.message });
   }
-}
+};
 
-export default handler
+export default handler;
